@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>weight converter</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+
+        }
+
+        </head>
+
+    </style>
+
+<body>
+    <div class="container">
+     	<div class="row">
+    	<div class="col-md-6 offset-md-3">
+      		<h1 class="display-4 text-center mb-5">Weight Converter</h1>
+            <form>
+                  <div class="form-group">
+                   <input id="lbsInput" type="number" class ="form-control form-control-lg" placeholder="enter pounds...">
+                   </div>    
+           </form>
+                <div id="output">
+                   <div class="card bg-primary mb-2">
+                	   <div class="card-body">
+                		<h4>Grams</h4>
+                			<div id="gramOutput"></div>
+                		</div>
+                	</div>
+
+                	<div class="card bg-success mb-2">
+                		<div class="card-body">
+                			<h4>kilograms</h4>
+                			<div id="KgOutput"></div>
+                		</div>
+                	</div>
+
+                	<div class="card bg-danger mb-2">
+                	<div class="card-body">
+                	 <h4>Ounces</h4>
+                	<div id="OzsOutput"></div>
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    		document.getElementById('output').style.visibility = 'hidden';
+    		document.getElementById('lbsInput').addEventListener('input', 	function(e){
+    		document.getElementById('output').style.visibility = 'visible';
+    		let lbs = e.target.value;
+    		document.getElementById('gramOutput').innerHTML = lbs/0.0022046;
+    		document.getElementById('KgOutput').innerHTML = lbs/2.2046;
+    		document.getElementById('OzsOutput').innerHTML = lbs*16;
+    	});
+    </script>
+</body>
+
+</html>
